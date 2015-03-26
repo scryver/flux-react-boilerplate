@@ -1,0 +1,26 @@
+{
+  "name": "flux-react-boilerplate",
+  "version": "0.0.1",
+  "description": "React Flux Boilerplate",
+  "author": "Michiel Schriever",
+  "license": "MIT",
+  "devDependencies": {
+    "react": "~0.13.1",
+    "flux-react": "~2.6.4",
+    "browserify": "~9.0.3",
+    "reactify": "~1.1.0",
+    "watchify": "~2.6.2",
+    "uglifyjs": "~2.4.10"
+  },
+  "dependencies": {},
+  "scripts": {
+    "watch": "watchify src/js/app.js -o src/public/js/bundle.js -v",
+    "browserify": "browserify src/js/app.js | uglifyjs > dist/js/bundle.js",
+    "build": "npm run browserify "
+  },
+  "browserify": {
+    "transform": [
+      "reactify"
+    ]
+  }
+}
